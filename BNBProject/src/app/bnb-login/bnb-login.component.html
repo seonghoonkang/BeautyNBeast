@@ -1,0 +1,12 @@
+
+<pre><============================child node========================================></pre>
+<div *ngIf="heroInfo">
+    <h2>{{heroInfo.name}} details!</h2>
+    <div>
+        <label>id: </label>{{heroInfo.id}}
+    </div>
+    <div>
+        <label>name: </label> <input [(ngModel)]="heroInfo.name"
+            placeholder="name" />
+    </div>
+</div>
