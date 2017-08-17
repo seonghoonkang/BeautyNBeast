@@ -24,8 +24,8 @@ export class AppComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
-    console.log('ngOnInit');
-    this.heroes = this.loginService.getHeroes();
+    console.log('ngOnInit promise');
+    this.loginService.getHeroes().then(result => this.heroes = result);
   }
 
   ngOnChanges(changes: SimpleChanges): void {
