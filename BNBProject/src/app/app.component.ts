@@ -1,29 +1,35 @@
-import {Component} from '@angular/core';
+import {Component, OnInit, OnChanges, SimpleChanges} from '@angular/core';
 import {Hero} from './hero';
-
-const HEROS: Hero[] = [
-  {id: 11, name: 'Mr. Nice'},
-  {id: 12, name: 'Narco'},
-  {id: 13, name: 'Bombasto'},
-  {id: 14, name: 'Celeritas'},
-  {id: 15, name: 'Magneta'},
-  {id: 16, name: 'RubberMan'},
-  {id: 17, name: 'Dynama'},
-  {id: 18, name: 'Dr IQ'},
-  {id: 19, name: 'Magma'},
-  {id: 20, name: 'Tornado'}
-];
-
+import {LoginService} from './login.service';
 @Component({
   selector: 'app-bnb',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit, OnChanges {
   title = '할일 도움이를 찾아 주셔서 반갑습니다.';
-  heroes = HEROS;
+  heroes: Hero[];
   selectedHero: Hero;
+  constructor(private loginService: LoginService) {
+    //    this.heroes = loginService.getHeroes(); --> avoid
+  };
+
+  //  Angular 에서는 new 연산자를 사용하지 않도록 권장:
+  //  Why?
+  //  1.서비스에 파라미터를 받도록 수정한다면 모든 생성자를 수정해야한다.
+  //  2.수 만은 객채가 발생한다.
+
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
   }
+
+  ngOnInit(): void {
+    console.log('ngOnInit');
+    this.heroes = this.loginService.getHeroes();
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('ngOnChanges');
+  }
+
 }
