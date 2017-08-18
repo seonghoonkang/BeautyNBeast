@@ -5,12 +5,14 @@ import {HttpModule} from '@angular/http';
 import {AppComponent} from './app.component';
 import {BnbLoginComponent} from './bnb-login/bnb-login.component';
 import {LoginService} from './login.service';
+import { DashBoardComponent } from './dash-board/dash-board/dash-board.component';
 
 @NgModule({
   bootstrap: [AppComponent],
   declarations: [
     AppComponent,
     BnbLoginComponent,
+    DashBoardComponent,
   ],
   imports: [
     BrowserModule,
