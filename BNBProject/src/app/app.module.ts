@@ -9,7 +9,7 @@ import {AppComponent} from './app.component';
 import {LoginComponent} from './login/login.component';
 import {TodoDetailComponent} from './todo/detail/todo-detail.component';
 import {TodoListComponent} from './todo/list/todo-list.component';
-import { TodoService } from './todo/list/todo.service';
+import {TodoService} from './todo/list/todo.service';
 
 @NgModule({
   bootstrap: [AppComponent],
@@ -20,8 +20,8 @@ import { TodoService } from './todo/list/todo.service';
     TodoDetailComponent,
   ],
   imports: [
-    AlertModule.forRoot(),
     BrowserModule,
+    AlertModule.forRoot(),
     FormsModule,
     HttpModule,
     RouterModule.forRoot([
