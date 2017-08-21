@@ -1,6 +1,11 @@
 # Bnbproject
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.0.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.4.
+create angular project
+
+1. npm install @angular/cli@1.X.X
+2. npm install --save-dev angular-ide
+3. ng new [Your Project Name] --directory ./ --skip-git
 
 ## Development server
 
@@ -13,6 +18,14 @@ Run `ng generate component component-name` to generate a new component. You can 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+if arise 'ERROR in ./src/main.ts Module not found: Error: Can't resolve' then
+    Your angular-cli is version 1.1.0 and zone.js@0.8.4
+    Updating to @angular/cli@1.2.4 and zone.js@0.8.14
+    Then
+    remove node_modules directory
+    npm cache clear
+    npm install
+    fixed the issue with ng build --prod
 
 ## Running unit tests
 
