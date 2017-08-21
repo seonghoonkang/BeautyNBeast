@@ -1,10 +1,10 @@
-import { BNBProjectPage } from './app.po';
+import { BnbprojectPage } from './app.po';
 
 describe('bnbproject App', () => {
-  let page: BNBProjectPage;
+  let page: BnbprojectPage;
 
   beforeEach(() => {
-    page = new BNBProjectPage();
+    page = new BnbprojectPage();
   });
 
   it('should display welcome message', done => {

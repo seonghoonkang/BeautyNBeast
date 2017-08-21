@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {TodoVO} from './todo';
+import {TodoService} from './todo.service';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-todo-list',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodoListComponent implements OnInit {
 
-  constructor() { }
+  todoList: TodoVO[];
+  selectedTodo: TodoVO;
+  constructor(private todoService: TodoService) {}
 
   ngOnInit() {
+    this.todoService.getTodoList().then(result => this.todoList = result);
   }
+  //  Angular 에서는 new 연산자를 사용하지 않도록 권장:
+  //  Why?
+  //  1.서비스에 파라미터를 받도록 수정한다면 모든 생성자를 수정해야한다.
+  //  2.수 만은 객채가 발생한다.
 
+  onSelect(todo: TodoVO): void {
+    this.selectedTodo = todo;
+  }
 }

@@ -1,3 +1,11 @@
-<p>
-  todo-detail works!
-</p>
+<pre>!============================child node========================================!</pre>
+<div *ngIf="todoDetail">
+    <h2>{{todoDetail.name}} details!</h2>
+    <div>
+        <label>id: </label>{{todoDetail.id}}
+    </div>
+    <div>
+        <label>name: </label> <input [(ngModel)]="todoDetail.name"
+            placeholder="name" />
+    </div>
+</div>

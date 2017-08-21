@@ -1,12 +1,36 @@
-
-<pre>!============================child node========================================!</pre>
-<div *ngIf="heroInfo">
-    <h2>{{heroInfo.name}} details!</h2>
-    <div>
-        <label>id: </label>{{heroInfo.id}}
-    </div>
-    <div>
-        <label>name: </label> <input [(ngModel)]="heroInfo.name"
-            placeholder="name" />
-    </div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<div class="login-panel panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Please Sign In</h3>
+				</div>
+				<div class="panel-body">
+					<form name="form" id="frm" role="form" data-toggle="validator"
+						autocomplete="off">
+						<fieldset>
+							<div class="form-group">
+								<input class="form-control" type="email"
+									name="username"
+									placeholder="E-mail" required>
+								<div class="help-block with-errors"></div>
+							</div>
+							<div class="form-group">
+								<input class="form-control realuserpw" placeholder="Password"
+									name="password" type="password"
+									required>
+								<div class="help-block with-errors"></div>
+							</div>
+							<div class="checkbox">
+								<label> <input name="remember" type="checkbox"
+									>Remember Me
+								</label>
+							</div>
+							<button type="submit" class="btn btn-lg btn-success btn-block">저장</button>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

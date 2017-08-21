@@ -1,6 +1,6 @@
 import { browser, by, element } from 'protractor';
 
-export class BNBProjectPage {
+export class BnbprojectPage {
   navigateTo() {
     return browser.get('/');
   }
