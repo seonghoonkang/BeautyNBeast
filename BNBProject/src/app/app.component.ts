@@ -1,6 +1,6 @@
 import {Component, OnInit, OnChanges, SimpleChanges} from '@angular/core';
-import {Hero} from './hero';
-import {LoginService} from './login.service';
+import {Hero} from './todo/list/hero';
+import {LoginService} from './login/login.service';
 @Component({
   selector: 'app-bnb',
   templateUrl: './app.component.html',
@@ -24,7 +24,7 @@ export class AppComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
-    console.log('ngOnInit promise');
+    console.log('ngOnInit');
     this.loginService.getHeroes().then(result => this.heroes = result);
   }
 
