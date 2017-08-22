@@ -1,11 +1,11 @@
 <pre>!============================child node========================================!</pre>
-<div *ngIf="todoDetail">
-    <h2>{{todoDetail.name}} details!</h2>
+<div *ngIf="todo">
+    <h2>{{todo.name}} details!</h2>
     <div>
-        <label>id: </label>{{todoDetail.id}}
+        <label>id: </label>{{todo.id}}
     </div>
     <div>
-        <label>name: </label> <input [(ngModel)]="todoDetail.name"
+        <label>name: </label> <input [(ngModel)]="todo.name"
             placeholder="name" />
     </div>
 </div>

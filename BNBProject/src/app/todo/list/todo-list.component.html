@@ -6,6 +6,6 @@ Property binding ngIf not used by any directive on an embedded template. Make su
 <ul class="heroes">
     <li *ngFor="let hero of todoList"
         [class.selected]="hero === selectedTodo" (click)="onSelect(hero)">
-        <span class="badge">{{hero.id}}</span><a routerLink="/todo-detail">{{hero.name}}</a>
+        <span class="badge">{{hero.id}}</span><a [routerLink]="['/todo-detail', hero.id]">{{hero.name}}</a>
     </li>
 </ul>

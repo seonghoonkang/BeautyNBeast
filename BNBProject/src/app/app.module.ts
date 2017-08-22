@@ -34,7 +34,7 @@ import {TodoService} from './todo/list/todo.service';
         component: TodoListComponent,
       },
       {
-        path: 'todo-detail',
+        path: 'todo-detail/:id',
         component: TodoDetailComponent,
       },
       {
