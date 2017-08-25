@@ -6,6 +6,7 @@ import {RouterModule} from '@angular/router';
 import {AlertModule} from 'ngx-bootstrap/alert';
 
 import {AppComponent} from './app.component';
+import { AppRoutingModule } from './app.routing.module';
 import {LoginComponent} from './login/login.component';
 import {TodoDetailComponent} from './todo/detail/todo-detail.component';
 import {TodoListComponent} from './todo/list/todo-list.component';
@@ -24,25 +25,7 @@ import {TodoService} from './todo/list/todo.service';
     AlertModule.forRoot(),
     FormsModule,
     HttpModule,
-    RouterModule.forRoot([
-      {
-        path: 'login',
-        component: LoginComponent,
-      },
-      {
-        path: 'todo-list',
-        component: TodoListComponent,
-      },
-      {
-        path: 'todo-detail/:ctg/:id',
-        component: TodoDetailComponent,
-      },
-      {
-        path: '',
-        redirectTo: '/todo-list',
-        pathMatch: 'full',
-      }
-    ])
+    AppRoutingModule,
   ],
   providers: [
     TodoService,
