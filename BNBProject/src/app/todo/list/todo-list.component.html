@@ -2,6 +2,6 @@
 <ul class="heroes">
     <li *ngFor="let hero of todoList"
         [class.selected]="hero === selectedTodo" (click)="onSelect(hero)">
-        <span class="badge">{{hero.id}}</span><a routerLink="/todo-detail">{{hero.name}}</a>
+        <span class="badge">{{hero.id}}</span><a (click)="goDetail()">{{hero.name}}</a>
     </li>
 </ul>
