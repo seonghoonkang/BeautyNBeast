@@ -1,4 +1,4 @@
-import {TodoVO} from '../list/todo';
+import {TodoVO} from '../list/todo.vo';
 import {TodoService} from '../list/todo.service';
 import {Component, OnInit, Input} from '@angular/core';
 import {Router, ActivatedRoute, Params} from '@angular/router';
@@ -26,5 +26,6 @@ export class TodoDetailComponent implements OnInit {
         this._router.params
             .switchMap((params: Params) => this.todoService.getTodo(+params['id']))// (+) converts string 'id' to a number
             .subscribe(todo => this.todoDetail = todo);
+        this.todoService.getFavoKeywords();
     }
 }

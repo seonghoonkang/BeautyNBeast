@@ -1,4 +1,4 @@
-import {TodoVO} from '../../todo/list/todo';
+import {TodoVO} from '../../todo/list/todo.vo';
 import {TodoService} from '../../todo/list/todo.service';
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
