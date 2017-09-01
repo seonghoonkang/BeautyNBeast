@@ -1,4 +1,4 @@
-import {TodoVO} from '../todo/list/todo';
+import {TodoVO} from '../todo/list/todo.vo';
 export const HEROES: TodoVO[] = [
   {id: 11, name: 'Mr. Nice'},
   {id: 12, name: 'Narco'},
