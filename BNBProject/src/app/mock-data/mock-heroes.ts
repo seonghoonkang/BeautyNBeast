@@ -1,13 +1,13 @@
 import {TodoVO} from '../todo/list/todo.vo';
 export const HEROES: TodoVO[] = [
-  {id: 11, name: 'Mr. Nice'},
-  {id: 12, name: 'Narco'},
-  {id: 13, name: 'Bombasto'},
-  {id: 14, name: 'Celeritas'},
-  {id: 15, name: 'Magneta'},
-  {id: 16, name: 'RubberMan'},
-  {id: 17, name: 'Dynama'},
-  {id: 18, name: 'Dr IQ'},
-  {id: 19, name: 'Magma'},
-  {id: 10, name: 'Tornado'}
+  new TodoVO(11, 'Mr. Nice'),
+  new TodoVO(12, 'Narco'),
+  new TodoVO(13, 'Bombasto'),
+  new TodoVO(14, 'Celeritas'),
+  new TodoVO(15, 'Magneta'),
+  new TodoVO(16, 'RubberMan'),
+  new TodoVO(17, 'Dynama'),
+  new TodoVO(18, 'Dr IQ'),
+  new TodoVO(19, 'Magma'),
+  new TodoVO(10, 'Tornado'),
 ];
