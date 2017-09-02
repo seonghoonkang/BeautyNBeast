@@ -12,7 +12,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<spec.servlet>3.1.0</spec.servlet>
+		<spec.servlet>4.0.0</spec.servlet>
 
 		<ver.spring>4.3.10.RELEASE</ver.spring>
 		<ver.mybatis>3.4.5</ver.mybatis>
