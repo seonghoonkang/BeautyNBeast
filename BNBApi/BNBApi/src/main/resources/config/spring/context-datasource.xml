@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+	http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.1.xsd">
+
+	<!-- JNDI 설정 -->
+	<jee:jndi-lookup id="mariaDS" jndi-name="java:/comp/env/jdbc/mariaDB" resource-ref="true" />
+	<jee:jndi-lookup id="oraDS" jndi-name="java:/comp/env/jdbc/oracleDB" resource-ref="true" />
+	
+	<bean id="dataSource" class="com.softz.office.std.common.datasource.DataSourceRouter">
+		<property name="targetDataSources">
+			<map key-type="com.softz.office.std.common.datasource.type.DataSourceType">
+				<entry key="MARIADB" value-ref="mariaDS" />
+				<entry key="ORACLE" value-ref="oraDS"/>
+			</map>
+		</property>
+		<property name="defaultTargetDataSource" ref="mariaDS" />
+	</bean>
+</beans>
