@@ -27,15 +27,12 @@ public class BnbExceptionResolver implements HandlerExceptionResolver {
 
 	@Autowired
 	private MessageSource msgSource;
-
-	@Override
 	public ModelAndView resolveException(HttpServletRequest request, HttpServletResponse response, Object handler,
 			Exception ex) {
 		ModelAndView mav = new ModelAndView();
 		ErrorResponseVO result = new ErrorResponseVO();
 		Locale locale = (Locale) request.getAttribute(CookieLocaleResolver.class.getName() + ".LOCALE");
 		// Locale locale = new Locale("ko");
-		String requestURI = request.getRequestURI();
 		LOGGER.debug(" kind of Exception = " + ex.getClass());
 		LOGGER.debug(" cause of Exception = " + ex.getCause());
 		LOGGER.debug(" Place of Exception = " + ex.getStackTrace()[0].getClassName() + "."
@@ -82,17 +79,4 @@ public class BnbExceptionResolver implements HandlerExceptionResolver {
 		return mav;
 	}
 
-	private Throwable getCause(Throwable ex) {
-		Throwable cause = ex.getCause();
-
-		if (cause != null) {
-			if (cause instanceof BnbException) {
-				cause = cause.getCause() == null ? cause : cause.getCause();
-			}
-		} else {
-			cause = ex;
-		}
-
-		return cause;
-	}
 }

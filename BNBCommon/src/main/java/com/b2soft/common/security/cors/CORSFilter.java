@@ -23,7 +23,6 @@ public class CORSFilter implements Filter {
     private String accessControlAllowMethods;
     private String accessControlMaxAge;
     private String accessControlAllowHeaders;
-    private String accessControlAllowOrigin;
     private String accessControlAllowCredentials;
     private String allowDomain;
 //    private List<String> whiteList;

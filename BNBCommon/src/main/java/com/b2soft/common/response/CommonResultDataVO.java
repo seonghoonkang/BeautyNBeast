@@ -1,5 +1,7 @@
 package com.b2soft.common.response;
 
+import java.io.Serializable;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -7,7 +9,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-public class CommonResultDataVO {
+public class CommonResultDataVO implements Serializable{
     private static final long serialVersionUID = -5432263935325157817L;
 
     @XmlElement(name = "result")
