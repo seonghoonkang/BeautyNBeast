@@ -9,19 +9,75 @@ import java.util.stream.Collectors;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.slf4j.MDC;
 import org.springframework.http.HttpMethod;
 
 import net.sf.json.JSONObject;
 
 public class MDCFilter implements Filter {
+	private static final Logger LOGGER = LoggerFactory.getLogger(MDCFilter.class);
+	
+    @Override
+    public void init(FilterConfig filterConfig) throws ServletException {
+    	LOGGER.info("=================MDCFilter Filter Initiate==================");
+    }
+    
+    @Override
+	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+			throws IOException, ServletException {
+        HttpServletRequest httpRequest = ((HttpServletRequest) request);
+        String requestMethod = httpRequest.getMethod();
+        String remoteIP = this.getClientIp(httpRequest);
+        String queryString = "".equals(httpRequest.getQueryString()) || httpRequest.getQueryString() == null ? ""
+                : "?" + httpRequest.getQueryString();
+        String requestURI = httpRequest.getRequestURI() + queryString;
+        String body = null;
+        String parameters = "";
+        JSONObject headers = JSONObject.fromObject(this.getHeadersInfo(httpRequest));
 
+        if(!requestMethod.equals(HttpMethod.GET.toString())) {
+            String contentType = httpRequest.getContentType() == null || "".equals(httpRequest.getContentType()) ? ""
+                    : httpRequest.getContentType().toLowerCase();
+            if(!contentType.startsWith("multipart/form-data")) {
+                MDCRequestWrapper requestWrapper = new MDCRequestWrapper((HttpServletRequest) request);
+                body = this.getBody(requestWrapper);
+                httpRequest = requestWrapper;
+            }
+        }
 
+        for(String name : Collections.<String>list(httpRequest.getParameterNames())) {
+            String value = httpRequest.getParameter(name);
+
+            parameters += name + "=" + value + "&";
+        }
+
+        MDC.put("**remoteIP", remoteIP);
+        MDC.put("**requestURI", requestURI);
+        MDC.put("**requestMethod", requestMethod);
+        MDC.put("**headers", headers.toString());
+        MDC.put("**parameters", "".equals(parameters) ? "none" : parameters);
+        MDC.put("**body", body);
+
+        try {
+            chain.doFilter(httpRequest, response);
+        } finally {
+            MDC.clear();
+        }	
+	}
+
+    @Override
+    public void destroy() {
+
+    }
+    
     private Map<String, String> getHeadersInfo(HttpServletRequest request) {
         Map<String, String> map = new HashMap<String, String>();
         Enumeration<String> headerNames = request.getHeaderNames();
@@ -64,45 +120,4 @@ public class MDCFilter implements Filter {
         return ip;
     }
 
-	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
-			throws IOException, ServletException {
-        HttpServletRequest httpRequest = ((HttpServletRequest) request);
-        String requestMethod = httpRequest.getMethod();
-        String remoteIP = this.getClientIp(httpRequest);
-        String queryString = "".equals(httpRequest.getQueryString()) || httpRequest.getQueryString() == null ? ""
-                : "?" + httpRequest.getQueryString();
-        String requestURI = httpRequest.getRequestURI() + queryString;
-        String body = null;
-        String parameters = "";
-        JSONObject headers = JSONObject.fromObject(this.getHeadersInfo(httpRequest));
-
-        if(!requestMethod.equals(HttpMethod.GET.toString())) {
-            String contentType = httpRequest.getContentType() == null || "".equals(httpRequest.getContentType()) ? ""
-                    : httpRequest.getContentType().toLowerCase();
-            if(!contentType.startsWith("multipart/form-data")) {
-                MDCRequestWrapper requestWrapper = new MDCRequestWrapper((HttpServletRequest) request);
-                body = this.getBody(requestWrapper);
-                httpRequest = requestWrapper;
-            }
-        }
-
-        for(String name : Collections.<String>list(httpRequest.getParameterNames())) {
-            String value = httpRequest.getParameter(name);
-
-            parameters += name + "=" + value + "&";
-        }
-
-        MDC.put("**remoteIP", remoteIP);
-        MDC.put("**requestURI", requestURI);
-        MDC.put("**requestMethod", requestMethod);
-        MDC.put("**headers", headers.toString());
-        MDC.put("**parameters", "".equals(parameters) ? "none" : parameters);
-        MDC.put("**body", body);
-
-        try {
-            chain.doFilter(httpRequest, response);
-        } finally {
-            MDC.clear();
-        }	
-	}
 }

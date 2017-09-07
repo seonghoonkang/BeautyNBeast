@@ -10,12 +10,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.i18n.CookieLocaleResolver;
 
 
-public class OfficeCookieLocaleResolver extends CookieLocaleResolver {
-    private static final Logger LOGGER = LoggerFactory.getLogger(OfficeCookieLocaleResolver.class);
+public class BnbCookieLocaleResolver extends CookieLocaleResolver {
+    private static final Logger LOGGER = LoggerFactory.getLogger(BnbCookieLocaleResolver.class);
     private String supportedLocale;
     private String defaultLocaleLang;
     
-    public OfficeCookieLocaleResolver() {
+    public BnbCookieLocaleResolver() {
         super();
         // TODO Auto-generated constructor stub
     }

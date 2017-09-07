@@ -11,7 +11,7 @@ import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 import org.springframework.web.servlet.support.RequestContextUtils;
 
 
-public class OfficeLocaleChangeInterceptor extends LocaleChangeInterceptor {
+public class BnbLocaleChangeInterceptor extends LocaleChangeInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws ServletException {

@@ -12,7 +12,7 @@
 	
 	<bean id="dataSource" class="com.b2soft.common.datasource.DataSourceRouter">
 		<property name="targetDataSources">
-			<map key-type="com.softz.office.std.common.datasource.type.DataSourceType">
+			<map key-type="com.b2soft.common.datasource.type.DataSourceType">
 				<entry key="MARIADB" value-ref="mariaDS" />
 				<entry key="ORACLE" value-ref="oraDS"/>
 			</map>

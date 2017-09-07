@@ -1,6 +1,6 @@
 package com.b2soft.bnb.api.account.pojo;
 
-import com.b2soft.bnb.api.account.vo.LoginResponseVO;
+import com.b2soft.bnb.api.account.vo.UserDataVO;
 
 public class UserClaim {
     private String issuer;
@@ -56,7 +56,7 @@ public class UserClaim {
         private long expireTime;
         private String version;
         
-        public UserClaimBuilder(LoginResponseVO userData) {
+        public UserClaimBuilder(UserDataVO userData) {
             this.userId = userData.getUserId();
             this.tenantId = userData.getTenantId();
         }

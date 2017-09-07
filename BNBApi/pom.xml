@@ -16,10 +16,12 @@
         <maven.test.skip>true</maven.test.skip>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <ver.hibernate-validator>5.2.3.Final</ver.hibernate-validator>
         <ver.aspectj>1.8.4</ver.aspectj>
         <ver.mockito>1.10.19</ver.mockito>
-        <ver.eclipselink>2.7.0</ver.eclipselink>
+        <ver.eclipselink>2.5.0</ver.eclipselink>
         <b2soft.common>0.0.1-SNAPSHOT</b2soft.common>
     </properties>
 
@@ -29,6 +31,11 @@
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-jwt</artifactId>
             <version>1.0.8.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-crypto</artifactId>
+            <version>4.2.3.RELEASE</version>
         </dependency>
         <!-- AOP -->
         <dependency>
@@ -62,12 +69,18 @@
             <version>${ver.eclipselink}</version>
         </dependency>
 
+        <!-- Validator -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>${ver.hibernate-validator}</version>
+        </dependency>
+
         <dependency>
             <groupId>com.b2soft.common</groupId>
             <artifactId>BNBCommon</artifactId>
             <version>${b2soft.common}</version>
         </dependency>
-
     </dependencies>
     
     <build>

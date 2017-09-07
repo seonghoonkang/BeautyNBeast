@@ -2,17 +2,13 @@ package com.b2soft.common.service.cache;
 
 import java.util.UUID;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-public enum SystemDataKeyType {
+public enum BnbSystemDataKeyType {
     
     TOKEN_SECRET_KEY {
 
         @Override
         public String getKeyName() {
             String randomSecretKey = UUID.randomUUID().toString();
-            LOGGER.debug("make new SecretKey : " + randomSecretKey);
             return randomSecretKey;
         }
 
@@ -37,6 +33,5 @@ public enum SystemDataKeyType {
     
     public abstract String getKeyName();
     public abstract String getKeyName(String menuId);    
-    private static final Logger LOGGER = LoggerFactory.getLogger(SystemDataAccessor.class);
     
 }

@@ -4,10 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class SystemDataAccessor {
+public class BnbSystemDataAccessor {
     @Autowired
-    private SystemDataDAO systemDataDao;
-    private static final String SECRET_KEY_TYPE = SystemDataKeyType.TOKEN_SECRET_KEY.getKeyName();
+    private BnbSystemDataDAO systemDataDao;
+    private static final String SECRET_KEY_TYPE = BnbSystemDataKeyType.TOKEN_SECRET_KEY.getKeyName();
     
     public String getTokenVersion() {
         return "v" + systemDataDao.selectAppVersion();
