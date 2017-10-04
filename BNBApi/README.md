@@ -9,7 +9,10 @@ create angular project
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+1. Project facets JDK 1.8
+2. Add maven-library to Properties > Deployment Assembly
+3. if you get error like that Failed to start component - ZipException: invalid LOC header (bad signature), 
+then clean your maven repository (C:\users\[your]\.m2\repository)  
 
 ## Code scaffolding
 

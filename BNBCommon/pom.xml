@@ -1,44 +1,44 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.b2soft.common</groupId>
-	<artifactId>BNBCommon</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+    <groupId>com.b2soft.common</groupId>
+    <artifactId>BNBCommon</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
-	<name>BNBCommon</name>
-	<url>http://maven.apache.org</url>
+    <name>BNBCommon</name>
+    <url>http://maven.apache.org</url>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<spec.servlet>4.0.0</spec.servlet>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <spec.servlet>4.0.0</spec.servlet>
 
-		<ver.spring>4.3.10.RELEASE</ver.spring>
-		<ver.mybatis>3.4.5</ver.mybatis>
-		<ver.quartz>2.3.0</ver.quartz>
-		<ver.slf4j>1.7.25</ver.slf4j>
-		<ver.logback>1.2.3</ver.logback>
-		<ver.json-lib>2.4</ver.json-lib>
-		<ver.jackson>2.9.0</ver.jackson>
-		<ver.jdom>2.0.6</ver.jdom>
-		<ver.junit>4.12</ver.junit>
-		<ver.mockito>1.10.19</ver.mockito>
-		<ver.apache-httpclient>4.5.3</ver.apache-httpclient>
-		<ver.commons-collections>3.2.2</ver.commons-collections>
-		<ver.commons-codec>1.10</ver.commons-codec>
-		<ver.commons-beanutils>1.9.3</ver.commons-beanutils>
-		<ver.commons-daemon>1.0.15</ver.commons-daemon>
-		<ver.commons-digester>2.1</ver.commons-digester>
-		<ver.commons-fileupload>1.3.3</ver.commons-fileupload>
-		<ver.commons-io>2.4</ver.commons-io>
-		<ver.commons-lang>2.6</ver.commons-lang>
-		<ver.commons-compress>1.6</ver.commons-compress>
-		<ver.commons-net>3.3</ver.commons-net>
-		<ver.commons-pool>1.6</ver.commons-pool>
-	</properties>
+        <ver.spring>4.3.10.RELEASE</ver.spring>
+        <ver.mybatis>3.4.5</ver.mybatis>
+        <ver.quartz>2.3.0</ver.quartz>
+        <ver.slf4j>1.7.25</ver.slf4j>
+        <ver.logback>1.2.3</ver.logback>
+        <ver.json-lib>2.4</ver.json-lib>
+        <ver.jackson>2.9.0</ver.jackson>
+        <ver.jdom>2.0.6</ver.jdom>
+        <ver.junit>4.12</ver.junit>
+        <ver.mockito>1.10.19</ver.mockito>
+        <ver.apache-httpclient>4.5.3</ver.apache-httpclient>
+        <ver.commons-collections>3.2.2</ver.commons-collections>
+        <ver.commons-codec>1.10</ver.commons-codec>
+        <ver.commons-beanutils>1.9.3</ver.commons-beanutils>
+        <ver.commons-daemon>1.0.15</ver.commons-daemon>
+        <ver.commons-digester>2.1</ver.commons-digester>
+        <ver.commons-fileupload>1.3.3</ver.commons-fileupload>
+        <ver.commons-io>2.4</ver.commons-io>
+        <ver.commons-lang>2.6</ver.commons-lang>
+        <ver.commons-compress>1.6</ver.commons-compress>
+        <ver.commons-net>3.3</ver.commons-net>
+        <ver.commons-pool>1.6</ver.commons-pool>
+    </properties>
 
-	<dependencies>
+    <dependencies>
         <!-- Spring Framework -->
         <dependency>
             <groupId>cglib</groupId>
@@ -323,5 +323,5 @@
             <artifactId>commons-pool</artifactId>
             <version>${ver.commons-pool}</version>
         </dependency>
-	</dependencies>
+    </dependencies>
 </project>

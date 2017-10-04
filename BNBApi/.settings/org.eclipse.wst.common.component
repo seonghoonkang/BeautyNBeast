@@ -3,6 +3,7 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
         <wb-resource deploy-path="/" source-path="/src/main/webapp"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/resources"/>
         <dependent-module archiveName="BNBCommon.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/BNBCommon/BNBCommon">
             <dependency-type>uses</dependency-type>
         </dependent-module>
