@@ -1,20 +1,19 @@
 package com.b2soft.bnb.api.account.vo;
 
 import java.io.Serializable;
-import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotEmpty;
+
 
 public class LoginRequestVO implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -1566922796839413085L;
 
-	@Size(min = 1)
+	@NotEmpty
 	private String loginId;
 
-	@Size(min = 1, max = 16)
-	private String accountPw;
+	@NotEmpty
+	private String loginPw;
 
 	public String getLoginId() {
 		return loginId;
@@ -24,12 +23,12 @@ public class LoginRequestVO implements Serializable {
 		this.loginId = loginId;
 	}
 
-	public String getAccountPw() {
-		return accountPw;
+	public String setLoginPw() {
+		return loginPw;
 	}
 
-	public void setAccountPw(String accountPw) {
-		this.accountPw = accountPw;
+	public void setLoginPw(String loginPw) {
+		this.loginPw = loginPw;
 	}
 
 }

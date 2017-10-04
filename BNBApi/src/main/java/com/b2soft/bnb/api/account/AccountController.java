@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.b2soft.bnb.api.account.impl.TokenGenerator;
 import com.b2soft.bnb.api.account.vo.LoginRequestVO;
 import com.b2soft.bnb.api.account.vo.LoginResponseVO;
+import com.b2soft.bnb.api.account.vo.UserDataVO;
 import com.b2soft.common.controller.BnbCommonController;
 import com.b2soft.common.error.BnbException;
 import com.b2soft.common.response.ResponseVO;
@@ -32,10 +33,10 @@ public class AccountController extends BnbCommonController {
 	private TokenGenerator tokenGenerator;
 
 	@RequestMapping(value = "/account/login", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseVO<LoginResponseVO> doLogIn(@RequestBody @Valid LoginRequestVO loginRequestVO,
+	public ResponseVO<UserDataVO> doLogIn(@RequestBody @Valid LoginRequestVO loginRequestVO,
 			HttpServletRequest request, HttpServletResponse response) {
-		LOGGER.debug("Hello, Welcome to the office zone:");
-		LoginResponseVO result = null;
+		LOGGER.debug("Hello, Welcome~");
+		UserDataVO result = null;
 		try {
 			result = accountService.login(loginRequestVO);
 			tokenGenerator.setCookieAccessToken(request, response, result);

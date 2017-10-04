@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="account">
+	<resultMap id="selectUserInfoMap" type="com.b2soft.bnb.api.account.vo.LoginResponseVO">
+		<result property="tenantId"     column="tenant_id" />
+		<result property="userId"     column="user_id" />
+		<result property="userName"     column="user_name" />
+		<result property="deptName" column="dept_name" />
+		<result property="picURL"   column="pic_url" />
+ 		<result property="posName"  column="pos_name" />
+		<result property="rankName" column="rank_name" />
+		<result property="dutyName" column="duty_name" />
+		<result property="resultCode" column="login_result"/>
+	</resultMap>
+	<select id="certification" parameterType="com.b2soft.bnb.api.account.vo.UserDataVO" resultMap="selectUserInfoMap">
+		SELECT 
+			tenant_id,
+			USER_ID,
+			USER_NAME, 
+			DEPT_NAME,
+			PICTURE_URL AS pic_url,
+			POS_NAME,
+			RANK_NAME,
+			DUTY_NAME,
+			CASE WHEN PASSWORD = #{accountPw} THEN 1 ELSE 0 END login_result
+		FROM USER_INFORMATION
+		WHERE LOGIN_ID = #{loginId}
+	</select>
+</mapper>

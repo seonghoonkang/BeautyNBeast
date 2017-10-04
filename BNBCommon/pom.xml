@@ -24,7 +24,6 @@
 		<ver.jdom>2.0.6</ver.jdom>
 		<ver.junit>4.12</ver.junit>
 		<ver.mockito>1.10.19</ver.mockito>
-		<ver.hibernate-validator>6.0.2.Final</ver.hibernate-validator>
 		<ver.apache-httpclient>4.5.3</ver.apache-httpclient>
 		<ver.commons-collections>3.2.2</ver.commons-collections>
 		<ver.commons-codec>1.10</ver.commons-codec>
@@ -260,12 +259,6 @@
             <groupId>org.slf4j</groupId>
             <artifactId>jcl-over-slf4j</artifactId>
             <version>${ver.slf4j}</version>
-        </dependency>
-        <!-- Validator -->
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-validator</artifactId>
-            <version>${ver.hibernate-validator}</version>
         </dependency>
         <!-- Java Servlet Spec -->
         <dependency>

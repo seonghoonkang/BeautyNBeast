@@ -84,8 +84,8 @@
  		<appender-ref ref="SRVOUT"/>
  	</appender>
  	
-	<logger name="com.hs.gms.srv.api" level="${LOG_LEVEL}"/>
-	<logger name="com.hs.gms.std.common" level="${LOG_LEVEL}"/>
+	<logger name="com.b2soft.bnb.api" level="${LOG_LEVEL}"/>
+	<logger name="com.b2soft.common" level="${LOG_LEVEL}"/>
 
 	<!-- Spring Framework -->
 	<logger name="org.springframework" level="INFO" />

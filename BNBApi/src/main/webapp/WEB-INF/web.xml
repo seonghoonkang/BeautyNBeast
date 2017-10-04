@@ -48,7 +48,7 @@
 		<filter-name>encodingFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
-	<filter>
+<!-- 	<filter>
 		<filter-name>xssFilter</filter-name>
 		<filter-class>com.softz.office.std.common.security.xss.XSSFilter</filter-class>
 		<init-param>
@@ -59,10 +59,10 @@
 	<filter-mapping>
 		<filter-name>xssFilter</filter-name>
 		<url-pattern>/*</url-pattern>
-	</filter-mapping>
+	</filter-mapping> -->
 	<filter>
 		<filter-name>Logback</filter-name>
-		<filter-class>com.softz.office.std.common.log.MDCFilter</filter-class>
+		<filter-class>com.b2soft.common.log.MDCFilter</filter-class>
 	</filter>
 	<filter-mapping>
 		<filter-name>Logback</filter-name>
@@ -70,7 +70,7 @@
 	</filter-mapping>
 	<filter>
 		<filter-name>cors</filter-name>
-		<filter-class>com.softz.office.std.common.security.cors.CORSFilter</filter-class>
+		<filter-class>com.b2soft.common.security.cors.CORSFilter</filter-class>
 		<init-param>
 			<param-name>allowMethods</param-name>
 			<param-value>OPTIONS, POST, GET, PUT, DELETE</param-value>
@@ -93,7 +93,7 @@
 		</init-param> -->
 		<init-param>
 			<param-name>allowDomain</param-name>
-			<param-value>http://localhost:8080</param-value>
+			<param-value>http://localhost:7777</param-value>
 		</init-param>		
 	</filter>
 	<filter-mapping>
@@ -120,7 +120,7 @@
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>/WEB-INF/spring/root-context.xml</param-value>
+			<param-value>/WEB-INF/spring/context-root.xml</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 		<multipart-config>

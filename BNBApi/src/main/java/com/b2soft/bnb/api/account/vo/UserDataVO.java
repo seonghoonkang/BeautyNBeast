@@ -121,6 +121,14 @@ public class UserDataVO implements Serializable {
         this.dutyName = dutyName;
     }
 
+    public int getLoginStatus() {
+		return this.loginStatus;
+	}
+
+	public void setLoginStatus(int loginStatus) {
+		this.loginStatus = loginStatus;
+	}
+
     private String tenantId;
     private String userId;
     private String loginId;
@@ -135,4 +143,6 @@ public class UserDataVO implements Serializable {
     private String timeZone;
     private long expireTime;
     private String[] userAuth;
+	private int loginStatus;
+
 }

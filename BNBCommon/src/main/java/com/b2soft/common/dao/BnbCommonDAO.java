@@ -4,7 +4,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.support.SqlSessionDaoSupport;
 import org.springframework.beans.factory.annotation.Autowired;
 
-public abstract class CommonDAO extends SqlSessionDaoSupport{
+public abstract class BnbCommonDAO extends SqlSessionDaoSupport{
 
     @Override
     @Autowired

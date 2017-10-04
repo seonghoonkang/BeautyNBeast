@@ -15,9 +15,9 @@ import org.springframework.web.util.CookieGenerator;
 
 import com.b2soft.bnb.api.account.pojo.UserClaim;
 import com.b2soft.bnb.api.account.pojo.UserClaim.UserClaimBuilder;
-import com.b2soft.bnb.api.account.vo.LoginResponseVO;
-import com.b2soft.common.service.cache.SystemDataAccessor;
-import com.b2soft.common.service.cache.SystemDataKeyType;
+import com.b2soft.bnb.api.account.vo.UserDataVO;
+import com.b2soft.common.service.cache.BnbSystemDataAccessor;
+import com.b2soft.common.service.cache.BnbSystemDataKeyType;
 
 import net.sf.json.JSONObject;
 
@@ -26,12 +26,12 @@ public class TokenGenerator {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(TokenGenerator.class);
     @Autowired
-    private SystemDataAccessor systemDataAccess;
+    private BnbSystemDataAccessor systemDataAccess;
 
-    @Value("#{config['com.softz.cookie.token']}")
+    @Value("#{config['bnb.cookie.token.name']}")
     protected String accessTokenName;
     
-    public void setCookieAccessToken(HttpServletRequest request, HttpServletResponse response, LoginResponseVO userData) {
+    public void setCookieAccessToken(HttpServletRequest request, HttpServletResponse response, UserDataVO userData) {
         // TODO Auto-generated method stub
         CookieGenerator tokenCookieGenerator = new CookieGenerator();
         CookieGenerator langCookieGenerator = new CookieGenerator();
@@ -53,7 +53,7 @@ public class TokenGenerator {
         langCookieGenerator.addCookie(response, browserLang);
     }
 
-    private String createAccessToken(LoginResponseVO userData, String serverName) {
+    private String createAccessToken(UserDataVO userData, String serverName) {
         // TODO Auto-generated method stub
         String version = systemDataAccess.getTokenVersion();
         String secretKey = systemDataAccess.getSecretKey();
@@ -66,7 +66,7 @@ public class TokenGenerator {
         byte[] byteAccessToken = jwt.bytes();
         
         LOGGER.debug("encryption secret key : " + secretKey);
-        LOGGER.debug("token cookie version(" + SystemDataKeyType.TOKEN_VERSION.toString() + ") : " + version);
+        LOGGER.debug("token cookie version(" + BnbSystemDataKeyType.TOKEN_VERSION.toString() + ") : " + version);
         LOGGER.debug(new String(byteAccessToken, 0, byteAccessToken.length));
         LOGGER.debug(jwt.toString());
         
