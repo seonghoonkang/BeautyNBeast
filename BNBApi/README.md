@@ -13,6 +13,7 @@ create angular project
 2. Add maven-library to Properties > Deployment Assembly
 3. if you get error like that Failed to start component - ZipException: invalid LOC header (bad signature), 
 then clean your maven repository (C:\users\[your]\.m2\repository)  
+4. BNBCommon 에 Apache library 제거
 
 ## Code scaffolding
 
