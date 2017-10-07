@@ -15,15 +15,15 @@
 								 http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
 								 http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.1.xsd">
 
-	<!-- Root Context: defines shared resources visible to all other web components -->
-	<context:property-placeholder properties-ref="config" />
-	
-	<!-- Enables the Spring MVC @Controller programming model -->
-	<annotation-driven validator="validator"/>
-	
-	
-	<task:executor id="asyncExecutor" pool-size="100-1000" queue-capacity="1000"  rejection-policy="ABORT" />
- 	<task:annotation-driven executor="asyncExecutor" />
+    <!-- Root Context: defines shared resources visible to all other web components -->
+    <context:component-scan base-package="com.b2soft" />
+    <context:property-placeholder properties-ref="config" />
+    
+    <!-- Enables the Spring MVC @Controller programming model -->
+    <annotation-driven validator="validator"/>
+    
+    <task:executor id="asyncExecutor" pool-size="100-1000" queue-capacity="1000"  rejection-policy="ABORT" />
+    <task:annotation-driven executor="asyncExecutor" />
 	
     <beans:bean id="springApplicationContext" class="com.b2soft.common.service.bean.SpringApplicationContext"/>
     <beans:bean id="filterMultipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" /> 

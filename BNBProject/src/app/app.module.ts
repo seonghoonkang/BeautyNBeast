@@ -9,7 +9,7 @@ import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app.routing.module';
 import {DashboardComponent} from './dashboard/dashboard/dashboard.component';
 import {LoginComponent} from './login/login.component';
-import {InMemoryWebApiModule} from 'angular2-in-memory-web-api';
+import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
 import {InMemoryDataService} from './mock-data/in-memory-data.service';
 import {TodoDetailComponent} from './todo/detail/todo-detail.component';
 import {TodoListComponent} from './todo/list/todo-list.component';
