@@ -35,7 +35,6 @@ public class AccountController extends BnbCommonController {
 	@RequestMapping(value = "/account/login", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseVO<UserDataVO> doLogIn(@RequestBody @Valid LoginRequestVO loginRequestVO,
 			HttpServletRequest request, HttpServletResponse response) {
-		LOGGER.debug("Hello, Welcome~");
 		UserDataVO result = null;
 		try {
 			result = accountService.login(loginRequestVO);

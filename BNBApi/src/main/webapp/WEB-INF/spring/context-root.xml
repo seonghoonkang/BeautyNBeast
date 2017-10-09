@@ -104,8 +104,6 @@
 			<mapping path="/**"/>
 			<exclude-mapping path="/health/check"/>
 			<exclude-mapping path="/account/login*"/>
-			<exclude-mapping path="/modeler/accesstoken*"/>
-			<exclude-mapping path="/modeler/opencancel*"/>
 			<exclude-mapping path="/error/**"/>
 			<beans:bean class="com.b2soft.bnb.api.account.interceptor.CertifyInterceptor">
 				<beans:property name="accessTokenName" value="#{config['bnb.cookie.token.name']}"/>

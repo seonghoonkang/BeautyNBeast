@@ -11,7 +11,6 @@ public class LoginRequestVO implements Serializable {
 
 	@NotEmpty
 	private String loginId;
-
 	@NotEmpty
 	private String loginPw;
 

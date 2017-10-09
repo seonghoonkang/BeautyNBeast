@@ -129,7 +129,7 @@ public class UserDataVO implements Serializable {
 		this.loginStatus = loginStatus;
 	}
 
-    private String tenantId;
+	private String tenantId;
     private String userId;
     private String loginId;
     private String userName;

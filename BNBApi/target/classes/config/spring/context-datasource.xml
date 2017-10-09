@@ -8,13 +8,13 @@
 
 	<!-- JNDI 설정 -->
 	<jee:jndi-lookup id="mariaDS" jndi-name="java:/comp/env/jdbc/mariaDB" resource-ref="true" />
-	<jee:jndi-lookup id="oraDS" jndi-name="java:/comp/env/jdbc/oracleDB" resource-ref="true" />
+<!-- 	<jee:jndi-lookup id="oraDS" jndi-name="java:/comp/env/jdbc/oracleDB" resource-ref="true" /> -->
 	
 	<bean id="dataSource" class="com.b2soft.common.datasource.DataSourceRouter">
 		<property name="targetDataSources">
 			<map key-type="com.b2soft.common.datasource.type.DataSourceType">
 				<entry key="MARIADB" value-ref="mariaDS" />
-				<entry key="ORACLE" value-ref="oraDS"/>
+				<!-- <entry key="ORACLE" value-ref="oraDS"/> -->
 			</map>
 		</property>
 		<property name="defaultTargetDataSource" ref="mariaDS" />

@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="BNBApi">
+    <wb-module deploy-name="bnb-api">
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
         <wb-resource deploy-path="/" source-path="/src/main/webapp"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/resources"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
         <dependent-module archiveName="BNBCommon.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/BNBCommon/BNBCommon">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <property name="context-root" value="BNBApi"/>
-        <property name="java-output-path" value="/BNBApi/target/classes"/>
+        <property name="context-root" value="bnb-api"/>
+        <property name="java-output-path" value="/bnb-api/target/classes"/>
     </wb-module>
 </project-modules>

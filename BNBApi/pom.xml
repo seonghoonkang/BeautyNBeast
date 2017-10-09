@@ -3,11 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.b2soft.bnb.api</groupId>
-    <artifactId>BNBApi</artifactId>
+    <artifactId>bnb-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>BNBApi</name>
+    <name>bnb-api</name>
     <url>http://maven.apache.org</url>
 
     <properties>

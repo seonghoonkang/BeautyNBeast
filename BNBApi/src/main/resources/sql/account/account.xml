@@ -12,18 +12,18 @@
 		<result property="dutyName" column="duty_name" />
 		<result property="resultCode" column="login_result"/>
 	</resultMap>
-	<select id="certification" parameterType="com.b2soft.bnb.api.account.vo.UserDataVO" resultMap="selectUserInfoMap">
+	<select id="certification" parameterType="com.b2soft.bnb.api.account.vo.LoginRequestVO" resultMap="selectUserInfoMap">
 		SELECT 
-			tenant_id,
+			A.TENANT_ID,
 			USER_ID,
 			USER_NAME, 
 			DEPT_NAME,
 			PICTURE_URL AS pic_url,
 			POS_NAME,
-			RANK_NAME,
-			DUTY_NAME,
-			CASE WHEN PASSWORD = #{accountPw} THEN 1 ELSE 0 END login_result
-		FROM USER_INFORMATION
+			CASE WHEN PASSWORD = password(#{loginPw}) THEN 1 ELSE 0 END LOGIN_RESULT
+		FROM USER_INFO A, POS B
 		WHERE LOGIN_ID = #{loginId}
+		and A.TENANT_ID = A.TENANT_ID
+        and A.POS_ID = A.POS_ID
 	</select>
 </mapper>
