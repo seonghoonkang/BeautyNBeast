@@ -8,6 +8,6 @@
 <app-bnb-login [heroInfo]="selectedHero"></app-bnb-login>
  -->
 <alert type="success"><h1>{{title}}</h1></alert>
-<a routerLink="/dashboard">Dashboard</a>
+<a routerLink="/dashboard" [routerLinkActiveOptions]="{exact: true}">Dashboard</a>
 <a routerLink="/login">Login</a>
 <router-outlet></router-outlet>
