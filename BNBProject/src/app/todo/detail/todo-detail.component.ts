@@ -2,7 +2,7 @@ import {TodoVO} from '../list/todo.vo';
 import {TodoService} from '../list/todo.service';
 import {Component, OnInit, Input} from '@angular/core';
 import {Router, ActivatedRoute, Params} from '@angular/router';
-import 'rxjs/add/operator/switchMap';
+import 'rxjs/add/operator/map';
 
 @Component({
     selector: 'app-todo-detail',
