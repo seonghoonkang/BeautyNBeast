@@ -33,6 +33,28 @@ import {TodoService} from './todo/list/todo.service';
   ],
   providers: [
     TodoService,
+    LogService,
+    {
+      provide: 'log',//use example--> @Inject('log') 
+      useClass: LogService
+    },
+    {
+      provide: 'todo',//use example--> @Inject('log') 
+      useExisting: TodoService
+    },
+    {
+      provide: 'apiUrl',//use example--> @Inject('apiUrl')
+      useValue: 'http://url'
+    },
+    {
+      provide: 'factory',//use example--> @Inject('factory') private factoryService: FactoryService
+      useFactory: (logService) =>{
+        return new FactoryService(logService, false);//Todo--> must be create FactoryService
+      },
+      deps:[
+        LogService,
+        ]
+    },
   ],
 })
 export class AppModule {}
