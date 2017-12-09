@@ -1,7 +1,7 @@
 <div *ngIf="todoDetail">
 	<h2>{{todoDetail.name}} details!</h2>
 	<div>
-		<label>id: </label>{{todoDetail.id}}
+		<label>id: </label>{{todoDetail.id | async}}
 	</div>
 	<div>
 		<label>name: </label> <input [(ngModel)]="todoDetail.name"
